@@ -32,6 +32,7 @@ collisions to occur and UUID's have no concept of locality e.g. if numeric IDs a
 > 1. **Hardware:** Every part of a machine can fail and many components can also cause data corruption, often at rates that are much higher than advertised e.g. DRAM error rates.
 > 1. **Humans:** Outages and downtime due to human error are also common to the point where there are protocols in places to mitigate human risk e.g. having multiple people watch or confirm a risky operation before starting or having ops people standing by in case of disaster. The best way to reduce this kind of error though is automation. 
 > 1. **Monitoring:** The lack of proper monitoring can also serve as a serious contributing factor towards bad outages. 
+> 
 >  [List of post mortems collected by the author](https://github.com/danluu/post-mortems).
 
    
