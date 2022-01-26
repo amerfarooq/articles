@@ -7,10 +7,7 @@ Contains links and summaries for technical articles that I found interesting.
 <details>
    <summary> <b>Designing Whatsapp </b></summary>
    
-> Talks about the the high level design of Whatsapp. Describes two main services: a chat service
-which forwards messages to recipients that are online and a transient service which stores messages for users that are offline. At the heart of both services are chat servers which
-maintain connections with the users and forward and fetch messages for them. Also talks about how images are shared as well as several client-server communication models such as 
-short-polling, long-polling and web sockets. Apart from that, there is also mention of how the “Last seen” feature is implemented.    
+> There are two microservices at the heart of Whatsapp: the chat service and the transient service. The chat service is responsible for messages sent by active users. The service first checks if the recipient is online or not and if they are, forwards the message directly to the user. Otherwise, the message will be handled by the transient service which is responsible for storing the messages (text or image) sent to offline users. When the recipient comes online, the service will forward the message to them. Media such as images or videos are uploaded to a file server and then served to the sender and receiver. Transfer of data between a user and the server occurs over web-sockets which offer a two-way communication channel. Clients also send heartbeats to the server over this channel which tells Whatsapp whenever a user was last active for their “Last seen at” feature.
 > [Read the article](http://highscalability.com/blog/2022/1/3/designing-whatsapp.html)
    
 </details>
@@ -34,7 +31,7 @@ collisions to occur and UUID's have no concept of locality e.g. if numeric IDs a
    <summary> <b>Reading postmorterms </b></summary>
    
 
-> The author talks about the most common cases of errors that have lead to large outages and failures at companies. These include:
+> Some of the most common cases of errors that have lead to large outages and failures at companies include:
 > 1. **Error Handling:** Most critical failures are as a result of bad error handling. This includes simply ignoring errors, catching the wrong exceptions and having incomplete TODOs in the error handling code. A significant portion of errors are easily detectable where “the error handling logic of a non-fatal error was so wrong that any statement coverage testing or more careful code reviews by the developers would have caught the bugs”. 
 > 1. **Configuration:** A disproportionate number of outages are caused by configuration bugs. 
 > 1. **Hardware:** Every part of a machine can fail and many components can also cause data corruption, often at rates that are much higher than advertised e.g. DRAM error rates.
