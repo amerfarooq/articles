@@ -43,4 +43,15 @@ collisions to occur and UUID's have no concept of locality e.g. if numeric IDs a
 >  [Read the article](https://danluu.com/postmortem-lessons/)
    
 </details>
+
+
+<details>
+   <summary> <b>Where does my validation live? </b></summary>
+   
+> The author talks about validating data at different layers of an application including the controller layer, the service layer and the domain layer. The controller layer validates the structure of the data, the properties and their types e.g., all required fields in a JSON object are present and are of the correct types. Converting the raw data to DTOs (Data Transfer Objects) is a good practice in this regard. The service layer should convert the DTOs into VOs [(Value Objects)]( https://enterprisecraftsmanship.com/posts/value-objects-explained/) where the property types are converted into valid domain concepts e.g., a payment type is converted from a string to a PaymentMethod which is a more meaningful concept. Finally, the domain layer validates the data by enforcing business rules e.g., preventing users from withdrawing sums larger than their account balance.   
+>  [Read the article](https://blog.frankdejonge.nl/where-does-validation-live/)
+   
+</details>
+
+
    
