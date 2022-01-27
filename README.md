@@ -3,7 +3,7 @@
  </p>
  
 <div align="center">
-  <h2> Contains links and summaries of technical articles that I found interesting. </h2>
+  <h2> Contains links and summaries of interesting technical articles. </h2>
 </div>
 
 
